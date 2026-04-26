@@ -1,0 +1,483 @@
+<!--
+DEPLOYMENT GUIDE: HOW TO PUT THIS SITE ONLINE FOR FREE
+
+Option 1: GitHub Pages (Recommended)
+1. Create a free account on GitHub.com.
+2. Create a new repository (e.g., "nexus-gaming-hub").
+3. Upload this index.html file to the repository.
+4. Go to Settings > Pages.
+5. Under "Build and deployment", set Source to "Deploy from a branch".
+6. Select the 'main' branch and root folder, then click Save.
+7. Your site will be live at https://<your-username>.github.io/nexus-gaming-hub/
+
+Option 2: Netlify (Fastest)
+1. Go to Netlify.com and sign up for a free account.
+2. Drag and drop this index.html file into the Netlify "Sites" upload area.
+3. Your site will be instantly deployed with a random URL (which you can change).
+
+Option 3: Vercel
+1. Go to Vercel.com and sign up.
+2. Install Vercel CLI or connect your GitHub repository.
+3. Deploy with a single command or push.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Gaming Hub - May Pen's Premier Game Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        
+        :root {
+            --primary-blue: #3b82f6;
+            --dark-bg: #0a0a0a;
+            --card-bg: #111827;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .blue-glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .blue-gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-glass {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full z-50 top-0 left-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-2xl font-extrabold tracking-tighter text-blue-500">NEXUS <span class="text-white">GAMING HUB</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="#games" class="hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium transition">Game Currency</a>
+                        <a href="#apps" class="hover:text-blue-500 px-3 py-2 rounded-md text-sm font-medium transition">App Subs</a>
+                        <a href="#admin" id="admin-link" class="hidden">Admin</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-300 hover:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                Level Up Your Gaming in <br>
+                <span class="blue-gradient-text">May Pen, Jamaica</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10">
+                Nexus Gaming Hub is your premium source for game currency and app subscriptions. Fast delivery, trusted service, local connection.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#games" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-full transition duration-300 transform hover:scale-105 blue-glow">
+                    Shop Game Currency
+                </a>
+                <a href="#apps" class="bg-transparent border-2 border-blue-600 text-blue-500 hover:bg-blue-600 hover:text-white font-bold py-4 px-8 rounded-full transition duration-300">
+                    App Subscriptions
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main id="main-content">
+        <!-- Sections will be injected here via JavaScript -->
+    </main>
+
+    <!-- Templates -->
+    <template id="storefront-template">
+        <!-- Game Currency Section -->
+        <section id="games" class="py-20 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center mb-12">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-3xl font-bold uppercase tracking-widest">Game Currency</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8" id="game-currency-list">
+                    <!-- Cards will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- App Subscriptions Section -->
+        <section id="apps" class="py-20 px-4 bg-gray-900/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center mb-12">
+                    <div class="w-12 h-1 bg-blue-600 mr-4"></div>
+                    <h2 class="text-3xl font-bold uppercase tracking-widest">App Subscriptions</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="app-subscriptions-list">
+                    <!-- Cards will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Order Modal -->
+        <div id="order-modal" class="fixed inset-0 z-[60] hidden flex items-center justify-center p-4">
+            <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeOrderModal()"></div>
+            <div class="bg-gray-900 border border-blue-500/30 rounded-3xl p-8 max-w-md w-full relative z-10 blue-glow">
+                <button onclick="closeOrderModal()" class="absolute top-6 right-6 text-gray-400 hover:text-white">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+                <h3 id="modal-product-name" class="text-2xl font-bold mb-2">Order Product</h3>
+                <p id="modal-product-price" class="text-blue-400 font-semibold mb-6">Price Details</p>
+                
+                <form id="order-form" onsubmit="handleOrderSubmit(event)" class="space-y-4">
+                    <input type="hidden" id="form-product-name">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Phone Number (WhatsApp)</label>
+                        <input type="tel" id="customer-phone" required class="w-full bg-black border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="e.g. 876-123-4567">
+                    </div>
+                    <div>
+                        <label id="id-label" class="block text-sm font-medium text-gray-400 mb-1">Player ID / Email</label>
+                        <input type="text" id="customer-id" required class="w-full bg-black border border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="Enter ID or Email">
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition duration-300 transform active:scale-95">
+                        Confirm Order
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Success Toast -->
+        <div id="toast" class="fixed bottom-10 left-1/2 -translate-x-1/2 z-[70] hidden">
+            <div class="bg-green-600 text-white px-8 py-4 rounded-full font-bold shadow-2xl flex items-center">
+                <i class="fas fa-check-circle mr-3"></i>
+                Order placed successfully! We will contact you soon.
+            </div>
+        </div>
+    </template>
+
+    <template id="admin-template">
+        <div class="py-24 px-4 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <h2 class="text-4xl font-black mb-2">Admin <span class="text-blue-500">Dashboard</span></h2>
+                    <p class="text-gray-400">Track orders and manage prices.</p>
+                </div>
+                <div class="flex gap-4">
+                    <div class="bg-blue-600/10 border border-blue-500/30 rounded-2xl p-6 flex items-center">
+                        <div class="mr-4">
+                            <p class="text-gray-400 text-sm uppercase font-bold">Total Orders</p>
+                            <p id="total-orders-count" class="text-3xl font-black text-white">0</p>
+                        </div>
+                        <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="bg-blue-600/10 border border-blue-500/30 rounded-2xl p-6 flex items-center">
+                        <div class="mr-4">
+                            <p class="text-gray-400 text-sm uppercase font-bold">Est. Revenue</p>
+                            <p id="total-revenue" class="text-3xl font-black text-white">$0.00</p>
+                        </div>
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Orders List -->
+                <div class="lg:col-span-2">
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-list mr-3 text-blue-500"></i> Recent Orders
+                    </h3>
+                    <div class="bg-gray-900/50 border border-blue-900/20 rounded-3xl overflow-hidden">
+                        <table class="w-full text-left">
+                            <thead class="bg-blue-900/20 text-gray-400 text-xs uppercase font-bold">
+                                <tr>
+                                    <th class="px-6 py-4">Product</th>
+                                    <th class="px-6 py-4">Customer</th>
+                                    <th class="px-6 py-4">Status</th>
+                                    <th class="px-6 py-4 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-tbody" class="divide-y divide-blue-900/10">
+                                <!-- Orders injected here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Price Management -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 flex items-center">
+                        <i class="fas fa-tag mr-3 text-blue-500"></i> Update Prices
+                    </h3>
+                    <div class="bg-gray-900/50 border border-blue-900/20 rounded-3xl p-6 space-y-4" id="price-editor-list">
+                        <!-- Price inputs injected here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/18761234567" target="_blank" class="fixed bottom-8 right-8 z-50 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl transition duration-300 transform hover:scale-110 blue-glow">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-blue-900/30 py-12 px-4 mt-20">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0">
+                <span class="text-xl font-extrabold tracking-tighter text-blue-500">NEXUS <span class="text-white text-lg">GAMING HUB</span></span>
+                <p class="text-gray-500 mt-2">Serving the May Pen community with excellence.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-blue-500 transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-500 transition"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-500 transition"><i class="fab fa-twitter text-xl"></i></a>
+            </div>
+        </div>
+        <div class="text-center text-gray-600 mt-10 text-sm">
+            &copy; 2024 Nexus Gaming Hub. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // WhatsApp Config
+        const WHATSAPP_NUMBER = "18761234567"; // Replace with real number
+
+        // Data Store
+        const defaultPrices = {
+            'Roblox': '1000 Robux - $15.00',
+            'Free Fire': '100 Diamonds - $1.50',
+            'PUBG': '60 UC - $1.20',
+            'CODM': '80 CP - $1.30',
+            'Blood Strike': '100 Gold - $1.50',
+            'Netflix': 'Basic Monthly - $12.00',
+            'Spotify': 'Premium Monthly - $10.00',
+            'Crunchyroll': 'Mega Fan Monthly - $8.00'
+        };
+
+        let prices = JSON.parse(localStorage.getItem('nexus_prices')) || defaultPrices;
+        let orders = JSON.parse(localStorage.getItem('nexus_orders')) || [];
+
+        // Basic Routing Logic
+        function handleRouting() {
+            const path = window.location.hash;
+            
+            if (path === '#admin') {
+                showAdminDashboard();
+            } else {
+                showStorefront();
+            }
+        }
+
+        function showStorefront() {
+            const mainContent = document.getElementById('main-content');
+            const template = document.getElementById('storefront-template');
+            mainContent.innerHTML = '';
+            mainContent.appendChild(template.content.cloneNode(true));
+
+            renderCards();
+        }
+
+        function renderCards() {
+            const gameList = document.getElementById('game-currency-list');
+            const appList = document.getElementById('app-subscriptions-list');
+
+            const games = [
+                { name: 'Roblox', icon: 'fa-cube' },
+                { name: 'Free Fire', icon: 'fa-fire' },
+                { name: 'PUBG', icon: 'fa-gun' },
+                { name: 'CODM', icon: 'fa-crosshairs' },
+                { name: 'Blood Strike', icon: 'fa-droplet' }
+            ];
+
+            const apps = [
+                { name: 'Netflix', icon: 'fa-tv' },
+                { name: 'Spotify', icon: 'fa-music' },
+                { name: 'Crunchyroll', icon: 'fa-cat' }
+            ];
+
+            games.forEach(game => {
+                const card = createCard(game, 'game');
+                gameList.appendChild(card);
+            });
+
+            apps.forEach(app => {
+                const card = createCard(app, 'app');
+                appList.appendChild(card);
+            });
+        }
+
+        function createCard(item, type) {
+            const div = document.createElement('div');
+            div.className = 'bg-gray-800/50 border border-blue-900/30 rounded-2xl p-6 hover:border-blue-500/50 transition duration-300 group';
+            div.innerHTML = `
+                <div class="w-16 h-16 bg-blue-900/20 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600/20 transition">
+                    <i class="fas ${item.icon} text-3xl text-blue-500"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-2">${item.name}</h3>
+                <p class="text-blue-400 font-semibold mb-6">${prices[item.name]}</p>
+                <button onclick="openOrderModal('${item.name}')" class="w-full py-3 bg-blue-600/10 border border-blue-600/50 text-blue-500 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition">
+                    Order Now
+                </button>
+            `;
+            return div;
+        }
+
+        function openOrderModal(productName) {
+            const modal = document.getElementById('order-modal');
+            const nameEl = document.getElementById('modal-product-name');
+            const priceEl = document.getElementById('modal-product-price');
+            const hiddenInput = document.getElementById('form-product-name');
+            const idLabel = document.getElementById('id-label');
+
+            nameEl.innerText = `Order ${productName}`;
+            priceEl.innerText = prices[productName];
+            hiddenInput.value = productName;
+            
+            // Adjust label based on product type
+            const appNames = ['Netflix', 'Spotify', 'Crunchyroll'];
+            idLabel.innerText = appNames.includes(productName) ? 'Email Address' : 'Player ID';
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeOrderModal() {
+            const modal = document.getElementById('order-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.getElementById('order-form').reset();
+        }
+
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            const product = document.getElementById('form-product-name').value;
+            const phone = document.getElementById('customer-phone').value;
+            const id = document.getElementById('customer-id').value;
+
+            const newOrder = {
+                id: Date.now(),
+                product,
+                phone,
+                customerIdentifier: id,
+                status: 'Pending',
+                date: new Date().toLocaleString(),
+                price: prices[product]
+            };
+
+            orders.push(newOrder);
+            localStorage.setItem('nexus_orders', JSON.stringify(orders));
+
+            showToast();
+            closeOrderModal();
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 5000);
+        }
+
+        function showAdminDashboard() {
+            const mainContent = document.getElementById('main-content');
+            const template = document.getElementById('admin-template');
+            mainContent.innerHTML = '';
+            mainContent.appendChild(template.content.cloneNode(true));
+
+            renderAdminOrders();
+            renderPriceEditor();
+            
+            document.getElementById('total-orders-count').innerText = orders.length;
+            
+            const total = orders.reduce((sum, order) => {
+                const match = order.price.match(/\$(\d+\.\d+)/);
+                return sum + (match ? parseFloat(match[1]) : 0);
+            }, 0);
+            document.getElementById('total-revenue').innerText = `$${total.toFixed(2)}`;
+
+            document.getElementById('admin-link').classList.remove('hidden');
+        }
+
+        function renderAdminOrders() {
+            const tbody = document.getElementById('orders-tbody');
+            tbody.innerHTML = orders.length ? '' : '<tr><td colspan="4" class="px-6 py-8 text-center text-gray-500">No orders yet</td></tr>';
+
+            orders.slice().reverse().forEach(order => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-blue-900/5 transition";
+                tr.innerHTML = `
+                    <td class="px-6 py-4 font-semibold">${order.product}</td>
+                    <td class="px-6 py-4">
+                        <div class="text-sm">${order.phone}</div>
+                        <div class="text-xs text-gray-500">${order.customerIdentifier}</div>
+                    </td>
+                    <td class="px-6 py-4">
+                        <span class="px-2 py-1 bg-yellow-500/20 text-yellow-500 rounded-md text-[10px] font-bold uppercase">${order.status}</span>
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                        <button onclick="deleteOrder(${order.id})" class="text-gray-600 hover:text-red-500 transition"><i class="fas fa-trash"></i></button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function renderPriceEditor() {
+            const container = document.getElementById('price-editor-list');
+            container.innerHTML = '';
+
+            for (const [product, price] of Object.entries(prices)) {
+                const div = document.createElement('div');
+                div.innerHTML = `
+                    <label class="block text-xs font-bold text-gray-500 mb-1 uppercase">${product}</label>
+                    <input type="text" value="${price}" onchange="updatePrice('${product}', this.value)" class="w-full bg-black border border-blue-900/30 rounded-lg px-3 py-2 text-sm focus:border-blue-500 outline-none transition">
+                `;
+                container.appendChild(div);
+            }
+        }
+
+        function updatePrice(product, newPrice) {
+            prices[product] = newPrice;
+            localStorage.setItem('nexus_prices', JSON.stringify(prices));
+        }
+
+        function deleteOrder(id) {
+            orders = orders.filter(o => o.id !== id);
+            localStorage.setItem('nexus_orders', JSON.stringify(orders));
+            showAdminDashboard();
+        }
+
+        window.addEventListener('popstate', handleRouting);
+        window.addEventListener('load', handleRouting);
+        window.addEventListener('hashchange', handleRouting);
+    </script>
+</body>
+</html>
